@@ -1,0 +1,195 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+}
+
+.nav-links a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #e8f0fe;
+    color: var(--primary);
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Rules Table */
+.rules-table { overflow-x: auto; }
+
+.rules-table .rule-enabled { opacity: 1; }
+.rules-table .rule-disabled { opacity: 0.5; }
+
+.rule-actions {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+}
+
+/* Rule Form */
+.rule-form-section {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: #fafafa;
+}
+
+.rule-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rule-form-header h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Stat Cards */
+.stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.stat-card h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.stat-card .stat-value.stat-primary { color: var(--primary); }
+.stat-card .stat-value.stat-success { color: var(--success); }
+.stat-card .stat-value.stat-danger { color: var(--danger); }
+.stat-card .stat-value.stat-warning { color: var(--warning); }
+
+/* Audit Log */
+.audit-entry {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+}
+
+.audit-entry:last-child { border-bottom: none; }
+
+.audit-action {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #e8f0fe;
+    color: var(--primary);
+}
+
+.audit-action.failed { background: #fce8e6; color: var(--danger); }
+
+/* Login */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 32px;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.login-container p.subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* Dry-run output */
+.dry-run-output {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 12px;
+}
+
+.dry-run-output .added { color: #6a9955; }
+.dry-run-output .removed { color: #ce9178; }
+.dry-run-output .unchanged { color: #569cd6; }
+
+/* Status indicators */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.active { background: var(--success); }
+.status-dot.draft { background: var(--warning); }
+.status-dot.inactive { background: var(--text-secondary); }
+.status-dot.failed { background: var(--danger); }

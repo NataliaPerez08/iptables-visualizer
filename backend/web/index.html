@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firewall Policy Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div id="app">
+        <nav id="navbar" class="navbar hidden">
+            <div class="nav-brand">Firewall Manager</div>
+            <ul class="nav-links">
+                <li><a href="#/dashboard" data-nav>Dashboard</a></li>
+                <li><a href="#/policies" data-nav>Policies</a></li>
+                <li><a href="#/audit" data-nav>Audit Log</a></li>
+            </ul>
+            <div class="nav-user">
+                <span id="user-info"></span>
+                <button id="logout-btn" class="btn btn-sm btn-outline">Logout</button>
+            </div>
+        </nav>
+        <main id="main-content" class="container"></main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <script src="js/components/rules-table.js"></script>
+    <script src="js/components/rule-form.js"></script>
+    <script src="js/components/audit-log.js"></script>
+    <script src="js/views/login.js"></script>
+    <script src="js/views/dashboard.js"></script>
+    <script src="js/views/policies.js"></script>
+    <script src="js/views/audit.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
