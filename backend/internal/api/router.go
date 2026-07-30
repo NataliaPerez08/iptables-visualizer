@@ -41,6 +41,7 @@ func NewRouter(db *sql.DB, cfg *config.Config) http.Handler {
 	authHandler := handlers.NewAuthHandler(userRepo, auditRepo, cfg.JWT)
 	policyHandler := handlers.NewPolicyHandler(policyRepo, auditRepo, compiler, validator)
 	auditHandler := handlers.NewAuditHandler(auditRepo)
+	systemHandler := handlers.NewSystemHandler()
 
 	authMw := middleware.AuthMiddleware(cfg.JWT.Secret)
 
@@ -72,6 +73,10 @@ func NewRouter(db *sql.DB, cfg *config.Config) http.Handler {
 				})
 
 				r.With(middleware.RoleMiddleware("admin")).Delete("/{id}", policyHandler.Delete)
+			})
+
+			r.Route("/system", func(r chi.Router) {
+				r.Get("/firewall", systemHandler.GetFirewall)
 			})
 
 			r.Route("/audit", func(r chi.Router) {
